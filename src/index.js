@@ -4,6 +4,7 @@ import App from './view/App';
 import reportWebVitals from './reportWebVitals';
 import './styles/global.scss';
 
+/* Creating a root element for the React app to render into. */
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
