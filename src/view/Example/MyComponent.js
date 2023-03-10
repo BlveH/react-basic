@@ -2,35 +2,41 @@ import React from "react";
 
 class MyComponent extends React.Component {
     state = {
-        name: "",
-        nickName: "BLUE"
+        firstName: "",
+        lastName: ""
     };
 
-    handleOnChangeName = (event) => {
+
+    handleChangeFName = (event) => {
         this.setState({
-            name: event.target.value
+            firstName: event.target.value
         });
     };
 
-    handleClickButton = () => {
-        alert("Happy new year!");
+    handleChangeLName = (event) => {
+        this.setState({
+            lastName: event.target.value
+        });
     };
+
+    handleOnClick = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+    };
+
     render() {
         return (
             <>
-                <div>
-                    <input value={this.state.name} type="text" onChange={(event) => { this.handleOnChangeName(event); }}></input>
-                    My name is {this.state['name']}
-                </div>
-                <div>
-                    My nick name is {this.state.nickName}
-                </div>
-                <div>
-                    <button onClick={this.handleClickButton} >Click me</button>
-                </div>
+                <form >
+                    <label htmlFor="fname">First name:</label><br />
+                    <input type="text" value={this.state.firstName} onChange={(event) => this.handleChangeFName(event)} /><br />
+                    <label htmlFor="lname">Last name:</label><br />
+                    <input type="text" value={this.state.lastName} onChange={(event) => this.handleChangeLName(event)} /><br /><br />
+                    <input type="submit" onClick={(event) => this.handleOnClick(event)} />
+                </form>
             </>
         );
     }
 }
 
-export default MyComponent;
+export default MyComponent;;
