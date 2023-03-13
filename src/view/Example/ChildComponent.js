@@ -1,44 +1,50 @@
 import React from "react";
 
 class ChildComponent extends React.Component {
+
     state = {
-        firstName: "",
-        lastName: ""
+        showJob: false
     };
 
-
-    handleChangeFName = (event) => {
-        this.setState({
-            firstName: event.target.value
-        });
-    };
-
-    handleChangeLName = (event) => {
-        this.setState({
-            lastName: event.target.value
-        });
-    };
-
-    handleOnClick = (event) => {
-        event.preventDefault();
-        console.log(this.state);
+    handleShowJob = () => {
+        this.setState(
+            { showJob: !this.state.showJob }
+        );
     };
 
     render() {
-        let { name, age, arrayJob } = this.props;
+        let { arrayJob } = this.props;
+        let { showJob } = this.state;
         return (
 
             <>
                 <div>
-                    <div>
-                        {arrayJob.map((item, index) => {
-                            return (
-                                <div key={item.id}>
-                                    {item.title} - {item.salary}
-                                </div>
-                            );
-                        })}
-                    </div>
+                    {showJob === true ?
+                        <>
+                            <div>
+                                <button onClick={() => this.handleShowJob()}>
+                                    Hide
+                                </button>
+                            </div>
+
+                            <div>
+                                {arrayJob.map((item, index) => {
+                                    return (
+                                        <div key={item.id}>
+                                            {item.title} - {item.salary}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </>
+                        :
+
+                        <div>
+                            <button onClick={() => this.handleShowJob()}>
+                                Show
+                            </button>
+                        </div>
+                    }
                 </div>
             </>
         );
