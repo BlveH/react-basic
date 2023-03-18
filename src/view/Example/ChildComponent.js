@@ -19,14 +19,19 @@ class ChildComponent extends React.Component {
 
             <>
                 <div>
-                    {showJob === true ?
+                    {showJob === false ?
                         <>
                             <div>
                                 <button onClick={() => this.handleShowJob()}>
-                                    Hide
+                                    Show
                                 </button>
                             </div>
 
+
+                        </>
+                        :
+
+                        <div>
                             <div>
                                 {arrayJob.map((item, index) => {
                                     return (
@@ -36,12 +41,8 @@ class ChildComponent extends React.Component {
                                     );
                                 })}
                             </div>
-                        </>
-                        :
-
-                        <div>
                             <button onClick={() => this.handleShowJob()}>
-                                Show
+                                Hide
                             </button>
                         </div>
                     }
