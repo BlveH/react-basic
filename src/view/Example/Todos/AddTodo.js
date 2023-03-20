@@ -1,5 +1,6 @@
 import React from "react";
 import ListTodo from './ListTodo';
+import { toast } from 'react-toastify';
 
 class AddTodo extends React.Component {
 
@@ -16,7 +17,8 @@ class AddTodo extends React.Component {
     handleAddTodo = () => {
         {
             if (!this.state.title) {
-                alert("Missing prams");
+                toast.error("Missing title!");
+                return;
             }
         }
 

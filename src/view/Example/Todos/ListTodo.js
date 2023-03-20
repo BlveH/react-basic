@@ -2,6 +2,7 @@ import React from "react";
 import './Todo.scss';
 import AddTodo from "./AddTodo";
 import AddComponent from './../AddComponent';
+import { toast } from 'react-toastify';
 
 
 class ListTodo extends React.Component {
@@ -16,6 +17,18 @@ class ListTodo extends React.Component {
         this.setState({
             listTodo: [...this.state.listTodo, todo]
         });
+        toast.success("Wow so easy!");
+    };
+
+    handleDeleteTodo = (todo) => {
+        let currentList = this.state.listTodo;
+        currentList = currentList.filter(item => item.id !== todo.id);
+        this.setState({
+            listTodo: currentList
+        });
+        toast.success("Delete success!");
+
+
     };
 
     render() {
@@ -31,7 +44,8 @@ class ListTodo extends React.Component {
                             <div className="todo-child" key={item.id}>
                                 <span>{index + 1} - {item.title}</span>
                                 <button className="btn-edit">Edit</button>
-                                <button className="btn-delete">Delete</button>
+                                <button className="btn-delete"
+                                    onClick={() => this.handleDeleteTodo(item)}>Delete</button>
                             </div>
                         );
                     })}
