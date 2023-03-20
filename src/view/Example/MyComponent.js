@@ -22,6 +22,10 @@ class MyComponent extends React.Component {
         });
     };
 
+    componentDidMount() {
+        console.log("Run component did mount");
+    };
+
     render() {
         return (
             <>

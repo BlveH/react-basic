@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
 import MyComponent from './Example/MyComponent';
+import ListTodo from './Example/Todos/ListTodo';
 function App() {
   return (
     <div className="App">
@@ -10,7 +11,8 @@ function App() {
           Hello world with BLUE!
         </p>
 
-        <MyComponent />
+        {/* <MyComponent /> */}
+        <ListTodo />
       </header>
     </div>
   );
