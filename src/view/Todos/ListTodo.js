@@ -1,7 +1,7 @@
 import React from "react";
 import './Todo.scss';
 import AddTodo from "./AddTodo";
-import AddComponent from './../AddComponent';
+import AddComponent from '../Example/AddComponent';
 import { toast } from 'react-toastify';
 
 
