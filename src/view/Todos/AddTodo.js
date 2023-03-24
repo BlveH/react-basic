@@ -1,7 +1,7 @@
 import React from "react";
 import ListTodo from './ListTodo';
 import { toast } from 'react-toastify';
-import Color from "../HOC/Color";
+
 
 class AddTodo extends React.Component {
 
@@ -50,4 +50,4 @@ class AddTodo extends React.Component {
 
 }
 
-export default Color(AddTodo);
+export default AddTodo;
