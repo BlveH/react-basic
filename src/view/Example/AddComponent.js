@@ -24,7 +24,7 @@ class AddComponent extends React.Component {
             alert("Missing prams");
         }
         this.props.addJob({
-            if: Math.random() * 1001,
+            id: Math.random() * 1001,
             title: this.state.title,
             salary: this.state.salary
         });
